@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Color Div</title>
+    <style>
+      .colorDiv {
+        width: 105px;
+        height: 105px;
+        margin: 20px auto;
+        border: 8px solid;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colorDiv"></div>
+    <div class="colorDiv"></div>
+    <div class="colorDiv"></div>
+
+    <script>
+      // Define an array of colors
+      const colors = [
+        "rgb(253, 169, 41)",
+        "rgb(42, 48, 56)",
+        "rgb(59, 140, 217)",
+        "rgb(0, 180, 151)",
+      ];
+
+      function getRandomColorFromArray() {
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      function setDivColors() {
+        // Get all divs with the class 'colorDiv'
+        const divs = document.querySelectorAll(".colorDiv");
+
+        divs.forEach((div) => {
+          div.style.borderColor = getRandomColorFromArray();
+        });
+      }
+
+      // Set the colors when the page loads
+      setDivColors();
+
+      // Example of how to create a new div with stable color
+
+      // Uncomment the line below to create a new div when the page loads
+      // createNewDiv();
+    </script>
+  </body>
+</html>
